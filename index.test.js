@@ -38,5 +38,28 @@ describe('plugin', function () {
 		
 		expect(options.wallpaperimage).to.equal(image);
 	});
-	
+
+	it('should inject wallpaperclick if wallpaperclick exists on window', function (){
+		var click = 'http://www.somedomain.com';
+		window.gardr_wallpaperclick = click;
+		
+		plugin(pluginApi, {});
+		
+		var options = {};
+		pluginApi.trigger('banner:rendered', options);
+		
+		expect(options.wallpaperclick).to.equal(click);
+	});
+
+	it('should inject wallpapertiling if wallpapertiling exists on window', function (){
+		var tiling = 'yes';
+		window.gardr_wallpapertiling = tiling;
+		
+		plugin(pluginApi, {});
+		
+		var options = {};
+		pluginApi.trigger('banner:rendered', options);
+		
+		expect(options.wallpapertiling).to.equal(tiling);
+	});
 });

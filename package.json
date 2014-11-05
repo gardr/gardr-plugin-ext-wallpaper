@@ -1,6 +1,6 @@
 {
   "name": "gardr-plugin-ext-wallpaper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gardr ext plugin for sending a wallpaper url to host",
   "main": "index.js",
   "scripts": {
